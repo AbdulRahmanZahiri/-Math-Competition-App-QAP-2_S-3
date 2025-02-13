@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<!-- 🏠 Home Page -->
+<div class="main-content index_container">
+    <h1>Welcome to the Math Competition App!</h1>
+
+    <!-- 🎯 Display the user's last recorded streak -->
+    <p>
+        <% if (streak > 0) { %>
+            Your last recorded streak: <%= streak %>
+        <% } else { %>
+            No streak yet. Start a quiz to track your streak!
+        <% } %>
+    </p>
+
+    <!-- 🔗 Navigation Buttons -->
+    <div class="navigation__container">
+        <a href="/quiz">Start New Quiz</a>
+        <a href="/leaderboards">View Leaderboards</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+<%- include('partials/footer') %>

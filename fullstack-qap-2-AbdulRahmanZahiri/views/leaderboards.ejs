@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<div class="main-content">
+    <h1>Leaderboards</h1>
+    <p>Top 10 Streaks:</p>
+
+    <!-- 🏆 Leaderboards Table -->
+    <table class="leaderboards-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Streak</th>
+                <th>Date Achieved</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 🎯 Check if there are any leaderboard entries -->
+            <% if (leaderboards.length > 0) { %>
+                <% leaderboards.forEach((entry, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td> <!-- Rank -->
+                        <td><%= entry.streak %></td> <!-- Streak Value -->
+                        <td><%= entry.date %></td> <!-- Date of Achievement -->
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <!-- ❌ Display message if there are no leaderboard entries -->
+                <tr>
+                    <td colspan="3">No streaks recorded yet.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <!-- 🔗 Navigation Buttons -->
+    <div class="navigation__container">
+        <a href="/" class="btn">Return to Home</a>
+        <a href="/quiz" class="btn">Start New Quiz</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+<%- include('partials/footer') %>
